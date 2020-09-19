@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  house: MyString
+  inventory: MyText
+  communications: MyText
+  certificate: MyString
+  will: MyString
+  death: one
+
+two:
+  house: MyString
+  inventory: MyText
+  communications: MyText
+  certificate: MyString
+  will: MyString
+  death: two

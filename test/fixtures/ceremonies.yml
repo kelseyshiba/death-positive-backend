@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  kind: MyString
+  speaker: MyString
+  list: MyText
+  narrative: MyText
+  name: MyString
+  cost: 1.5
+  death: one
+
+two:
+  location: MyString
+  kind: MyString
+  speaker: MyString
+  list: MyText
+  narrative: MyText
+  name: MyString
+  cost: 1.5
+  death: two
