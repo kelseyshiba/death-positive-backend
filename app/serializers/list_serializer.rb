@@ -1,4 +1,7 @@
 class ListSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :first_name, :last_name, :email, :phone, :ceremony_id
+  #belongs_to :ceremony
+
+
 end

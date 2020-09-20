@@ -1,10 +1,12 @@
 class Api::V1::CeremoniesController < ApplicationController
     def index
-        
+        ceremonies = Ceremony.all
+        render json: CeremonySerializer.new(ceremonies)
     end
 
     def show
-
+        ceremony = Ceremony.find_by_id(params[:id])
+        render json: CeremonySerializer.new(ceremony)
     end
 
     def create
