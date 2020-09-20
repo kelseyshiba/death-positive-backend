@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_20_000941) do
+ActiveRecord::Schema.define(version: 2020_09_20_034338) do
 
   create_table "ceremonies", force: :cascade do |t|
     t.string "location"
@@ -25,14 +25,7 @@ ActiveRecord::Schema.define(version: 2020_09_20_000941) do
     t.index ["death_id"], name: "index_ceremonies_on_death_id"
   end
 
-  create_table "deaths", force: :cascade do |t|
-    t.string "person"
-    t.datetime "date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "lists", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -40,7 +33,14 @@ ActiveRecord::Schema.define(version: 2020_09_20_000941) do
     t.integer "ceremony_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["ceremony_id"], name: "index_lists_on_ceremony_id"
+    t.index ["ceremony_id"], name: "index_contacts_on_ceremony_id"
+  end
+
+  create_table "deaths", force: :cascade do |t|
+    t.string "person"
+    t.datetime "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "services", force: :cascade do |t|
@@ -56,6 +56,6 @@ ActiveRecord::Schema.define(version: 2020_09_20_000941) do
   end
 
   add_foreign_key "ceremonies", "deaths"
-  add_foreign_key "lists", "ceremonies"
+  add_foreign_key "contacts", "ceremonies"
   add_foreign_key "services", "deaths"
 end
