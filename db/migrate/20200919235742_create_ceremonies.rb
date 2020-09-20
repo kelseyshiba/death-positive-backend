@@ -4,7 +4,6 @@ class CreateCeremonies < ActiveRecord::Migration[6.0]
       t.string :location
       t.string :kind
       t.string :speaker
-      t.text :list
       t.text :narrative
       t.string :name
       t.float :cost
