@@ -4,7 +4,7 @@ class CeremonySerializer
   #belongs_to :death
   #has_one :list
 
-  attribute :lists do |object|
-    object.lists.as_json
+  attribute :contacts do |object|
+    object.contacts.as_json
   end
 end
