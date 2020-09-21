@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :contacts
+  
   namespace :api do
     namespace :v1 do 
-          resources :services
-      resources :ceremonies
+      resources :services
+      #resources :contacts
+      resources :ceremonies do 
+        resources :contacts, only: [:index]
+      end
       resources :deaths
     end
   end
