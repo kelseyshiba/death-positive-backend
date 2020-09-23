@@ -13,7 +13,11 @@
 ActiveRecord::Schema.define(version: 2020_09_20_034338) do
 
   create_table "ceremonies", force: :cascade do |t|
-    t.string "location"
+    t.string "location_name"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
     t.string "kind"
     t.string "speaker"
     t.text "narrative"

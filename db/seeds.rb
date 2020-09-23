@@ -8,12 +8,12 @@
 
 death = Death.create(person: 'Shiba', date: Date.today)
 death2 = Death.create(person: 'Bob', date: Date.today + 1)
-ceremony = Ceremony.create(location: '111 1st Street, Omaha, NE 88888',
+ceremony = Ceremony.create(location_name: 'Joes Funeral Home', address: '444 4th Street', city: 'Tucson', state: 'AZ', zip: '85741',
     kind: 'burial', speaker: 'Pastor John', narrative: 'Starts at 9am, then party, then food, then drinking!', name: 'Memorial of',
     cost: 400.00,
     death_id: death.id
 )
-ceremony2 = Ceremony.create(location: '111 1st Street, Omaha, NE 88888',
+ceremony2 = Ceremony.create(location_name: 'My Home', address: '111 1st Street', city: 'Sheridan', state: 'WY', zip: '85522',
     kind: 'burial', speaker: 'Pastor John', narrative: 'Starts at 9am, then party, then food, then drinking!', name: 'Memorial of',
     cost: 400.00,
     death_id: death2.id

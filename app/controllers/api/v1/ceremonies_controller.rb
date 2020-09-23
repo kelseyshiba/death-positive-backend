@@ -20,6 +20,6 @@ class Api::V1::CeremoniesController < ApplicationController
     private
 
     def ceremony_params
-        params.require(:ceremony).permit(:location, :kind, :speaker, :narrative, :name, :cost, :death_id)
+        params.require(:ceremony).permit(:location_name, :address, :city, :state, :zip, :kind, :speaker, :narrative, :name, :cost, :death_id)
     end
 end
