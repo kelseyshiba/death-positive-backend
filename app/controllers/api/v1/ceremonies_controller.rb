@@ -10,7 +10,13 @@ class Api::V1::CeremoniesController < ApplicationController
     end
 
     def create
-
+        ceremony = Ceremony.new(ceremony_params)
+        death = Death.find_by_id(params[:ceremony][:death_id])
+        if ceremony.save
+            render json: DeathSerializer.new(death)
+        else
+            render json: {error: 'Cannot create this ceremony'}
+        end
     end
 
     def destroy

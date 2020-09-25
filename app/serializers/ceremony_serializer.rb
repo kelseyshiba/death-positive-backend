@@ -1,6 +1,6 @@
 class CeremonySerializer
   include FastJsonapi::ObjectSerializer
-  attributes :location, :kind, :speaker, :narrative, :name, :cost, :death_id
+  attributes :location_name, :address, :city, :state, :zip, :kind, :speaker, :narrative, :name, :cost, :death_id
   #belongs_to :death
   #has_one :list
 
