@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :services
       #resources :contacts
       resources :ceremonies do 
-        resources :contacts, only: [:index]
+        resources :contacts, only: [:index, :create, :show, :destroy]
       end
       resources :deaths
     end
