@@ -11,9 +11,9 @@ class Api::V1::CeremoniesController < ApplicationController
 
     def create
         ceremony = Ceremony.new(ceremony_params)
-        death = Death.find_by_id(params[:ceremony][:death_id])
+        #death = Death.find_by_id(params[:ceremony][:death_id])
         if ceremony.save
-            render json: DeathSerializer.new(death)
+            render json: CeremonySerializer.new(ceremony)
         else
             render json: {error: 'Cannot create this ceremony'}
         end
