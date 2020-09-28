@@ -19,8 +19,14 @@ class Api::V1::CeremoniesController < ApplicationController
         end
     end
 
-    def destroy
-
+    def update
+        ceremony = Ceremony.find_by_id(params[:id])
+        ceremony.update(ceremony_params)
+        if ceremony.save 
+            render json: CeremonySerializer.new(ceremony)
+        else
+            render json: {error: 'Could not update ceremony'}
+        end
     end
 
     private
