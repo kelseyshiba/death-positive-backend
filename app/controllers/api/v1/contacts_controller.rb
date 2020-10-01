@@ -10,7 +10,7 @@ class Api::V1::ContactsController < ApplicationController
         contact = Contact.new(contact_params)
         @ceremony.contacts << contact
          if contact.save
-            render json: CeremonySerializer.new(@ceremony)
+            render json: ContactSerializer.new(contact)
          else
             render json: {error: 'Contact not created'}
          end
@@ -25,7 +25,7 @@ class Api::V1::ContactsController < ApplicationController
     def destroy
         contact = Contact.find_by_id(params[:id])
         contact.destroy
-        render json: CeremonySerializer.new(@ceremony)
+        render json: ContactSerializer.new(contact)
     end
     
     private
