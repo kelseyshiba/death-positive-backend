@@ -22,6 +22,12 @@ class Api::V1::ContactsController < ApplicationController
         render json: ContactSerializer.new(contact)
     end
 
+    def update
+        contact = Contact.find_by_id(params[:id])
+        contact.update(contact_params)
+        render json: ContactSerializer.new(contact)
+    end
+
     def destroy
         contact = Contact.find_by_id(params[:id])
         contact.destroy
@@ -34,6 +40,6 @@ class Api::V1::ContactsController < ApplicationController
     end
 
     def contact_params
-        params.require(:contact).permit(:first_name, :last_name, :ceremony_id, :phone, :email)
+        params.require(:contact).permit(:id, :first_name, :last_name, :ceremony_id, :phone, :email)
     end
 end
